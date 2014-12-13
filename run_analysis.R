@@ -49,18 +49,21 @@ use <- all[,sort(c(ind_mean,ind_std,562,563))]
 names(use) <- gsub("()","",names(use),fixed=TRUE)
 names(use) <- gsub("-","_",names(use),fixed=TRUE)
 
-# aggregate dataset by activity, using dplyr
+# calculate mean of dataset by activity and subject, using dplyr
 tbl_use <- tbl_df(use)
 by_group <- group_by(tbl_use,Activity,Subject)
 means <- summarise_each(by_group,funs(mean))
 
+# recovert to normal data frame
 final <- data.frame(means)
-
+# add mean to colum name
 names(final)[-(1:2)] <- as.character(lapply(names(final[-(1:2)]),function(x) paste0("mean_",x)))
 
+# writing out data to text file
 write.table(final,file="tidydata.txt",row.names=FALSE)
 
-reread <- read.table("tidydata.txt",header=TRUE)
+# to read in tidy data set use:
+# tidydata <- <- read.table("tidydata.txt",header=TRUE)
 
                
                
