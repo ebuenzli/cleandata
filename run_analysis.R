@@ -1,3 +1,5 @@
+# creates a tidy data set
+
 library(dplyr)
 
 dir = 'UCI HAR Dataset/'
@@ -63,7 +65,7 @@ names(final)[-(1:2)] <- as.character(lapply(names(final[-(1:2)]),function(x) pas
 write.table(final,file="tidydata.txt",row.names=FALSE)
 
 # to read in tidy data set use:
-# tidydata <- <- read.table("tidydata.txt",header=TRUE)
+# tidydata <- read.table("tidydata.txt",header=TRUE)
 
                
                
