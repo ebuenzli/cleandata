@@ -10,8 +10,7 @@ Subject: The ID number of the person doing the activity
 
 The remaining 66 colums were derived from the accelerometer and gyroscope measurements. The units of all variables are the same as in the original measurements since we did not make any transformations.  
 
-mean\_tBodyAcc\_[mean|std]\_[X|Y|Z]
-
+mean\_tBodyAcc\_[mean|std]\_[X|Y|Z]  
 mean\_tGravityAcc\_[mean|std]\_[X|Y|Z]
 
 mean\_tBodyAccJerk\_[mean|std]\_[X|Y|Z]
