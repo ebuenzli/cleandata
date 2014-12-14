@@ -48,6 +48,7 @@ ind_std <- grep("std",feat[,2],fixed=TRUE)
 # extract only relevant columns
 use <- all[,sort(c(ind_mean,ind_std,562,563))]
 
+# remove invalid characters from variable names
 names(use) <- gsub("()","",names(use),fixed=TRUE)
 names(use) <- gsub("-","_",names(use),fixed=TRUE)
 
@@ -56,7 +57,7 @@ tbl_use <- tbl_df(use)
 by_group <- group_by(tbl_use,Activity,Subject)
 means <- summarise_each(by_group,funs(mean))
 
-# recovert to normal data frame
+# reconvert to normal data frame
 final <- data.frame(means)
 # add mean to colum name
 names(final)[-(1:2)] <- as.character(lapply(names(final[-(1:2)]),function(x) paste0("mean_",x)))
