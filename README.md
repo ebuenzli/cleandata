@@ -27,9 +27,9 @@ The variable names are altered by removing brackets and replacing dashes with un
 
 The data frame is converted into a dplyr object which simplifies operations on groups. 
 
-The data is grouped by activity and subject, and the mean calculated for each column for each such group. 
+The data is grouped by activity and subject, and the mean calculated for each column each activity and subject. 
 
 The data frame is converted back to a normal data frame and "mean_" is added to the beginning of the column names. 
 
-The final tidy data set is then written into a text file. The file can be read back into R by using the command: tidydata <- <- read.table("tidydata.txt",header=TRUE)
+The final tidy data set is then written into a text file. The file can be read back into R by using the command: tidydata <- read.table("tidydata.txt",header=TRUE)
 
